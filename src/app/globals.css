@@ -11,14 +11,41 @@
   --color-border: var(--border);
 }
 
+/* ─── Dark theme (default) ────────────────────────── */
 :root {
   --background: #0a0a0a;
   --foreground: #ededed;
   --border: rgba(255,255,255,0.08);
-  --green: #5a8f6a;
-  --green-dim: rgba(90,143,106,0.45);
-  --green-faint: rgba(90,143,106,0.12);
+
+  --bg:              #0a0a0a;
+  --bg-card:         #0e0e0e;
+  --bg-card-hover:   #0f1510;
+
+  --text:            #ffffff;
+  --text-60:         rgba(255,255,255,0.82);
+  --text-55:         rgba(255,255,255,0.75);
+  --text-45:         rgba(255,255,255,0.70);
+  --text-40:         rgba(255,255,255,0.65);
+  --text-38:         rgba(255,255,255,0.72);
+  --text-35:         rgba(255,255,255,0.55);
+  --text-32:         rgba(255,255,255,0.68);
+  --text-25:         rgba(255,255,255,0.40);
+  --text-22:         rgba(255,255,255,0.45);
+  --text-20:         rgba(255,255,255,0.35);
+  --text-18:         rgba(255,255,255,0.30);
+
+  --divider:         rgba(255,255,255,0.06);
+  --divider-7:       rgba(255,255,255,0.07);
+  --divider-8:       rgba(255,255,255,0.08);
+  --divider-10:      rgba(255,255,255,0.10);
+  --divider-14:      rgba(255,255,255,0.14);
+  --divider-30:      rgba(255,255,255,0.30);
+
+  --green:           #3d6b4a;
+  --green-dim:       rgba(61,107,74,0.45);
+  --green-faint:     rgba(61,107,74,0.12);
 }
+
 
 @layer base {
   * {
@@ -32,23 +59,26 @@
   }
 
   body {
-    background: #0a0a0a;
-    color: #ededed;
+    background: var(--bg);
+    color: var(--text);
     font-family: var(--font-display), system-ui, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
+    transition: none;
   }
 
   ::selection {
     background: var(--green-dim);
-    color: #ededed;
+    color: var(--text);
   }
 }
 
 /* ─── Scrollbar ──────────────────────────────────── */
 ::-webkit-scrollbar { width: 2px; }
-::-webkit-scrollbar-track { background: #0a0a0a; }
+::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: var(--green-dim); border-radius: 99px; }
 
 /* Hide Next.js error overlay */
@@ -56,7 +86,7 @@ nextjs-portal { display: none !important; }
 
 /* ─── Hover utilities ─────────────────────────────── */
 .hover-text-bright {
-  color: rgba(237,237,237,0.4);
+  color: var(--text-40);
   transition: color 0.15s;
 }
 .hover-text-bright:hover { color: var(--green); }
@@ -67,8 +97,8 @@ nextjs-portal { display: none !important; }
 .hover-opacity:hover { opacity: 0.85; }
 
 .hover-contact-btn {
-  border-color: rgba(255,255,255,0.14);
-  color: rgba(237,237,237,0.55);
+  border-color: var(--divider-14);
+  color: var(--text-55);
   transition: border-color 0.15s, color 0.15s;
 }
 .hover-contact-btn:hover {
@@ -77,20 +107,20 @@ nextjs-portal { display: none !important; }
 }
 
 .hover-partner-link {
-  color: rgba(237,237,237,0.22);
+  color: var(--text-22);
   transition: color 0.15s;
 }
 .hover-partner-link:hover { color: var(--green); }
 
 .hover-work-card {
-  background: #0e0e0e;
+  background: var(--bg-card);
   transition: background 0.15s;
 }
-.hover-work-card:hover { background: #0f1510; }
+.hover-work-card:hover { background: var(--bg-card-hover); }
 
 .hover-skill-pill {
-  border-color: rgba(255,255,255,0.08);
-  color: rgba(237,237,237,0.38);
+  border-color: var(--divider-8);
+  color: var(--text-38);
   transition: border-color 0.12s, color 0.12s;
 }
 .hover-skill-pill:hover {
@@ -98,12 +128,6 @@ nextjs-portal { display: none !important; }
   color: var(--green);
 }
 
-/* ─── Footer contact grid ─────────────────────────── */
-@media (max-width: 680px) {
-  #contact > div:first-of-type {
-    grid-template-columns: 1fr !important;
-  }
-}
 
 /* ─── Stats grid ──────────────────────────────────── */
 .stats-grid { grid-template-columns: repeat(3, 1fr); }

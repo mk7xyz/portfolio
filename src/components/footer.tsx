@@ -9,7 +9,6 @@ export default function Footer() {
     if (calLoaded.current) return;
     calLoaded.current = true;
 
-    // Preload Cal.com embed script immediately so it's ready before user scrolls
     const preload = document.createElement('link');
     preload.rel = 'preload';
     preload.as = 'script';
@@ -57,8 +56,8 @@ export default function Footer() {
   }, []);
 
   return (
-    <section id="contact" style={{ background: '#0a0a0a' }}>
-      <div style={{ height: '1px', background: 'rgba(255,255,255,0.06)' }} />
+    <section id="contact" style={{ background: 'var(--bg)' }}>
+      <div style={{ height: '1px', background: 'var(--divider)' }} />
 
       <div style={{
         maxWidth: '1100px',
@@ -85,7 +84,7 @@ export default function Footer() {
             lineHeight: 0.88,
             letterSpacing: '-0.04em',
             fontStyle: 'italic',
-            color: 'rgba(237,237,237,0.4)',
+            color: 'var(--text-40)',
           }}>
             let&apos;s chat.
           </h2>
@@ -98,7 +97,7 @@ export default function Footer() {
         />
       </div>
 
-      <div style={{ height: '1px', background: 'rgba(255,255,255,0.06)' }} />
+      <div style={{ height: '1px', background: 'var(--divider)' }} />
       <div style={{
         maxWidth: '1100px',
         margin: '0 auto',
@@ -109,12 +108,12 @@ export default function Footer() {
         flexWrap: 'wrap',
         gap: '0.75rem',
       }}>
-        <span style={{ fontFamily: 'var(--font-display)', fontSize: '0.62rem', letterSpacing: '0.06em', color: 'rgba(237,237,237,0.18)' }}>
+        <span style={{ fontFamily: 'var(--font-display)', fontSize: '0.62rem', letterSpacing: '0.06em', color: 'var(--text-18)' }}>
           © 2026 Muhammad Kamil
         </span>
         <div style={{ display: 'flex', gap: '2rem' }}>
           {['Tampa, FL', 'mk7ft.com'].map(t => (
-            <span key={t} style={{ fontFamily: 'var(--font-display)', fontSize: '0.62rem', letterSpacing: '0.04em', color: 'rgba(237,237,237,0.18)' }}>
+            <span key={t} style={{ fontFamily: 'var(--font-display)', fontSize: '0.62rem', letterSpacing: '0.04em', color: 'var(--text-18)' }}>
               {t}
             </span>
           ))}

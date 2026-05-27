@@ -1,7 +1,5 @@
 'use client';
 
-import { SKILLS } from '@/lib/skills';
-
 const COMPANIES = [
   {
     name: 'doublespeed.ai',
@@ -44,23 +42,17 @@ const MAX = '1100px';
 
 const LABEL_STYLE: React.CSSProperties = {
   fontFamily: 'var(--font-display)',
-  fontSize: '0.62rem',
+  fontSize: '0.72rem',
   letterSpacing: '0.06em',
-  color: 'rgba(237,237,237,0.25)',
+  color: 'var(--text-25)',
   marginBottom: 'clamp(1.4rem,2.5vh,2.2rem)',
   display: 'block',
 };
 
-const DIVIDER = (
-  <div style={{ height: '1px', background: 'rgba(255,255,255,0.06)', margin: `0 ${PAD}` }} />
-);
-
 export default function Work() {
   return (
     <section id="work">
-
-      {/* ── Companies + Numbers (merged) ── */}
-      <div style={{ maxWidth: MAX, margin: '0 auto', padding: `clamp(3rem,6vh,5rem) ${PAD} clamp(2rem,4vh,3.5rem)` }}>
+      <div style={{ maxWidth: MAX, margin: '0 auto', padding: `clamp(3rem,6vh,5rem) ${PAD} clamp(2.5rem,5vh,4rem)` }}>
         <span style={LABEL_STYLE}>work</span>
 
         {/* Company cards */}
@@ -68,10 +60,10 @@ export default function Work() {
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 230px), 1fr))',
           gap: '1px',
-          border: '1px solid rgba(255,255,255,0.07)',
+          border: '1px solid var(--divider-7)',
           borderRadius: '8px',
           overflow: 'hidden',
-          marginBottom: 'clamp(2rem,4vh,3.5rem)',
+          marginBottom: 'clamp(2.5rem,5vh,4rem)',
         }}>
           {COMPANIES.map((co) => (
             <a
@@ -84,28 +76,28 @@ export default function Work() {
                 display: 'flex',
                 flexDirection: 'column',
                 gap: '0.6rem',
-                padding: 'clamp(1.1rem,2vw,1.6rem)',
+                padding: 'clamp(1.2rem,2vw,1.8rem)',
                 textDecoration: 'none',
-                borderRight: '1px solid rgba(255,255,255,0.07)',
+                borderRight: '1px solid var(--divider-7)',
               }}
             >
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '0.5rem' }}>
                 <span style={{
                   fontFamily: 'var(--font-editorial)',
-                  fontSize: 'clamp(1rem,1.3vw,1.2rem)',
+                  fontSize: 'clamp(1.05rem,1.4vw,1.3rem)',
                   fontWeight: 300,
-                  color: '#ededed',
+                  color: 'var(--text)',
                   letterSpacing: '-0.01em',
                 }}>
                   {co.name}
                 </span>
                 <span style={{
                   fontFamily: 'var(--font-display)',
-                  fontSize: '0.55rem',
+                  fontSize: '0.6rem',
                   letterSpacing: '0.04em',
-                  color: co.tag === 'current' ? 'var(--green)' : 'rgba(237,237,237,0.35)',
-                  border: `1px solid ${co.tag === 'current' ? 'var(--green-dim)' : 'rgba(255,255,255,0.1)'}`,
-                  padding: '0.18rem 0.5rem',
+                  color: co.tag === 'current' ? 'var(--green)' : 'var(--text-35)',
+                  border: `1px solid ${co.tag === 'current' ? 'var(--green-dim)' : 'var(--divider-10)'}`,
+                  padding: '0.2rem 0.55rem',
                   borderRadius: '3px',
                   whiteSpace: 'nowrap',
                   flexShrink: 0,
@@ -113,23 +105,23 @@ export default function Work() {
                   {co.tag}
                 </span>
               </div>
-              <span style={{ fontFamily: 'var(--font-display)', fontSize: '0.68rem', letterSpacing: '0.04em', color: 'rgba(237,237,237,0.45)' }}>
+              <span style={{ fontFamily: 'var(--font-display)', fontSize: '0.75rem', letterSpacing: '0.04em', color: 'var(--text-45)', fontWeight: 500 }}>
                 {co.role}
               </span>
-              <p style={{ fontFamily: 'var(--font-display)', fontSize: '0.72rem', color: 'rgba(237,237,237,0.32)', lineHeight: 1.5, flex: 1, margin: 0 }}>
+              <p style={{ fontFamily: 'var(--font-display)', fontSize: '0.82rem', color: 'var(--text-60)', lineHeight: 1.55, flex: 1, margin: 0 }}>
                 {co.desc}
               </p>
-              <svg width="11" height="11" viewBox="0 0 12 12" fill="none" style={{ opacity: 0.2, alignSelf: 'flex-end' }}>
-                <path d="M2 10L10 2M10 2H4M10 2v6" stroke="#ededed" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
+              <svg width="11" height="11" viewBox="0 0 12 12" fill="none" style={{ opacity: 0.3, alignSelf: 'flex-end' }}>
+                <path d="M2 10L10 2M10 2H4M10 2v6" stroke="var(--text)" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </a>
           ))}
         </div>
 
-        {/* Stats row - directly under cards, no divider */}
+        {/* Stats row */}
         <div className="stats-grid" style={{ display: 'grid', gap: 'clamp(1rem,3vw,2.5rem)' }}>
           {STATS.map((s) => (
-            <div key={s.n} style={{ borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: 'clamp(1rem,2vh,1.5rem)' }}>
+            <div key={s.n} style={{ borderTop: '1px solid var(--divider-8)', paddingTop: 'clamp(1rem,2vh,1.5rem)' }}>
               <div style={{
                 fontFamily: 'var(--font-editorial)',
                 fontSize: 'clamp(2rem,4.5vw,4rem)',
@@ -142,48 +134,16 @@ export default function Work() {
               }}>
                 {s.n}
               </div>
-              <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.72rem', color: 'rgba(237,237,237,0.6)', letterSpacing: '0.04em', marginBottom: '0.2rem' }}>
+              <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.82rem', color: 'var(--text-60)', fontWeight: 500, letterSpacing: '0.02em', marginBottom: '0.25rem' }}>
                 {s.label}
               </div>
-              <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.62rem', color: 'rgba(237,237,237,0.22)', letterSpacing: '0.02em', lineHeight: 1.5 }}>
+              <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.72rem', color: 'var(--text-40)', letterSpacing: '0.01em', lineHeight: 1.5 }}>
                 {s.sub}
               </div>
             </div>
           ))}
         </div>
       </div>
-
-      {DIVIDER}
-
-      {/* ── Skills ── */}
-      <div style={{ maxWidth: MAX, margin: '0 auto', padding: `clamp(2rem,4vh,3.5rem) ${PAD}` }}>
-        <span style={LABEL_STYLE}>technical skills</span>
-
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.35rem' }}>
-          {SKILLS.map((s) => (
-            <div
-              key={s.label}
-              className="hover-skill-pill"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '0.32rem',
-                padding: '0.25rem 0.6rem',
-                border: '1px solid',
-                borderRadius: '3px',
-                fontFamily: 'var(--font-display)',
-                fontSize: '0.62rem',
-                letterSpacing: '0.06em',
-                cursor: 'default',
-              }}
-            >
-              {s.icon(11)}
-              {s.label}
-            </div>
-          ))}
-        </div>
-      </div>
-
     </section>
   );
 }

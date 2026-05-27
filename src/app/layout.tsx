@@ -22,31 +22,13 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Muhammad Kamil - GTM & Growth",
-  description:
-    "Muhammad Kamil runs growth and product at venture-backed startups. GTM at DoubleSpeed.ai. Founder of JRVS, SPRK, and Aster. Based in Tampa, FL.",
-  keywords: [
-    "Muhammad Kamil",
-    "MK7",
-    "GTM",
-    "growth",
-    "startup",
-    "DoubleSpeed",
-    "JRVS",
-    "SPRK",
-    "Aster",
-    "Tampa",
-    "product",
-    "operator",
-  ],
+  title: "Muhammad Kamil",
   authors: [{ name: "Muhammad Kamil", url: "https://mk7ft.com" }],
   creator: "Muhammad Kamil",
   metadataBase: new URL("https://mk7ft.com"),
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Muhammad Kamil - GTM & Growth",
-    description:
-      "GTM at DoubleSpeed.ai. Founder of JRVS, SPRK, and Aster. I run growth and product at venture-backed startups.",
+    title: "Muhammad Kamil",
     url: "https://mk7ft.com",
     siteName: "Muhammad Kamil",
     type: "website",
@@ -62,9 +44,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Muhammad Kamil - GTM & Growth",
-    description:
-      "GTM at DoubleSpeed.ai. Founder of JRVS, SPRK, and Aster. I run growth and product at venture-backed startups.",
+    title: "Muhammad Kamil",
     creator: "@mk7ft",
     images: ["/og-image.jpg"],
   },

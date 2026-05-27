@@ -1,5 +1,6 @@
 'use client';
 
+
 const PAD = 'clamp(1.5rem,6vw,5rem)';
 const MAX = '1100px';
 
@@ -17,11 +18,12 @@ export default function Hero() {
         minHeight: '100dvh',
         display: 'flex',
         flexDirection: 'column',
-        background: '#0a0a0a',
+        background: 'var(--bg)',
+        transition: 'background-color 0.25s ease',
       }}
     >
-      {/* Nav — border spans full width, content constrained */}
-      <div style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+      {/* Nav — border full-width, content constrained to match other sections */}
+      <div style={{ borderBottom: '1px solid var(--divider)' }}>
         <nav style={{
           maxWidth: MAX,
           margin: '0 auto',
@@ -29,6 +31,7 @@ export default function Hero() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
+          gap: '1rem',
         }}>
           <span style={{
             fontFamily: 'var(--font-editorial)',
@@ -40,20 +43,22 @@ export default function Hero() {
           }}>
             MK7
           </span>
-          <a
-            href="https://linkedin.com/in/mk7ft"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover-text-bright"
-            style={{
-              fontFamily: 'var(--font-display)',
-              fontSize: '0.72rem',
-              letterSpacing: '0.04em',
-              textDecoration: 'none',
-            }}
-          >
-            LinkedIn
-          </a>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
+            <a
+              href="https://linkedin.com/in/mk7ft"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover-text-bright"
+              style={{
+                fontFamily: 'var(--font-display)',
+                fontSize: '0.72rem',
+                letterSpacing: '0.04em',
+                textDecoration: 'none',
+              }}
+            >
+              LinkedIn
+            </a>
+          </div>
         </nav>
       </div>
 
@@ -74,7 +79,7 @@ export default function Hero() {
           fontFamily: 'var(--font-display)',
           fontSize: '0.7rem',
           letterSpacing: '0.06em',
-          color: 'rgba(237,237,237,0.35)',
+          color: 'var(--text-35)',
           marginBottom: 'clamp(1rem,2vh,1.8rem)',
         }}>
           current: gtm @{' '}
@@ -96,7 +101,7 @@ export default function Hero() {
           fontSize: 'clamp(3.8rem,10vw,11rem)',
           lineHeight: 0.88,
           letterSpacing: '-0.04em',
-          color: '#ededed',
+          color: 'var(--text)',
           marginBottom: '0.06em',
         }}>
           Muhammad
@@ -108,7 +113,7 @@ export default function Hero() {
           lineHeight: 0.88,
           letterSpacing: '-0.04em',
           fontStyle: 'italic',
-          color: 'rgba(237,237,237,0.55)',
+          color: 'var(--text)',
           marginBottom: 'clamp(1.5rem,3vh,2.5rem)',
         }}>
           Kamil.
@@ -130,7 +135,7 @@ export default function Hero() {
               fontFamily: 'var(--font-display)',
               fontWeight: 300,
               fontSize: 'clamp(0.85rem,1.1vw,1rem)',
-              color: 'rgba(237,237,237,0.38)',
+              color: 'var(--text-38)',
               lineHeight: 1.4,
               letterSpacing: '0.01em',
               margin: 0,
@@ -153,7 +158,7 @@ export default function Hero() {
               gap: '0.5rem',
               padding: '0.75rem 1.75rem',
               background: 'var(--green)',
-              color: '#0a0a0a',
+              color: '#fff',
               fontFamily: 'var(--font-display)',
               fontSize: '0.72rem',
               letterSpacing: '0.04em',
@@ -192,8 +197,8 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Partners — border spans full width, content constrained */}
-      <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+      {/* Partners — border full-width, content constrained */}
+      <div style={{ borderTop: '1px solid var(--divider)' }}>
         <div style={{
           maxWidth: MAX,
           margin: '0 auto',
@@ -208,7 +213,7 @@ export default function Hero() {
             fontFamily: 'var(--font-display)',
             fontSize: '0.6rem',
             letterSpacing: '0.06em',
-            color: 'rgba(237,237,237,0.2)',
+            color: 'var(--text-20)',
           }}>
             as seen in
           </span>
