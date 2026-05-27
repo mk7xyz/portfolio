@@ -73,7 +73,16 @@ export default function Hero() {
           color: 'rgba(237,237,237,0.35)',
           marginBottom: 'clamp(1rem,2vh,1.8rem)',
         }}>
-          gtm ops @ doublespeed.ai
+          current: gtm @{' '}
+          <a
+            href="https://doublespeed.ai"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover-text-bright"
+            style={{ textDecoration: 'none', letterSpacing: '0.06em' }}
+          >
+            doublespeed
+          </a>
         </p>
 
         {/* Name */}

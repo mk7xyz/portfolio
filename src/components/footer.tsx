@@ -64,14 +64,10 @@ export default function Footer() {
         maxWidth: '1100px',
         margin: '0 auto',
         padding: 'clamp(3rem,6vh,5rem) clamp(1.5rem,6vw,5rem)',
-        display: 'grid',
-        gridTemplateColumns: '1fr 1.4fr',
-        gap: 'clamp(2rem,4vw,4rem)',
-        alignItems: 'start',
       }}>
 
-        {/* Left — headline */}
-        <div style={{ paddingTop: '0.5rem' }}>
+        {/* Headline row */}
+        <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.5em', marginBottom: 'clamp(2rem,4vh,3rem)', flexWrap: 'wrap' }}>
           <h2 style={{
             fontFamily: 'var(--font-editorial)',
             fontWeight: 300,
@@ -79,7 +75,6 @@ export default function Footer() {
             lineHeight: 0.88,
             letterSpacing: '-0.04em',
             color: '#ededed',
-            marginBottom: '0.06em',
           }}>
             building?
           </h2>
@@ -91,16 +86,15 @@ export default function Footer() {
             letterSpacing: '-0.04em',
             fontStyle: 'italic',
             color: 'rgba(237,237,237,0.4)',
-            marginBottom: 'clamp(1.5rem,3vh,2.5rem)',
           }}>
             let&apos;s chat.
           </h2>
         </div>
 
-        {/* Right — Cal.com inline embed */}
+        {/* Cal.com full-width embed */}
         <div
           id="my-cal-inline-meet"
-          style={{ width: '100%', height: '520px', overflow: 'hidden' }}
+          style={{ width: '100%', height: '550px', overflow: 'hidden' }}
         />
       </div>
 

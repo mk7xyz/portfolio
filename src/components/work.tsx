@@ -113,10 +113,10 @@ export default function Work() {
                   {co.tag}
                 </span>
               </div>
-              <span style={{ fontFamily: 'var(--font-display)', fontSize: '0.65rem', letterSpacing: '0.04em', color: 'rgba(237,237,237,0.3)' }}>
+              <span style={{ fontFamily: 'var(--font-display)', fontSize: '0.68rem', letterSpacing: '0.04em', color: 'rgba(237,237,237,0.45)' }}>
                 {co.role}
               </span>
-              <p style={{ fontFamily: 'var(--font-display)', fontSize: '0.78rem', color: 'rgba(237,237,237,0.4)', lineHeight: 1.5, flex: 1, margin: 0 }}>
+              <p style={{ fontFamily: 'var(--font-display)', fontSize: '0.72rem', color: 'rgba(237,237,237,0.32)', lineHeight: 1.5, flex: 1, margin: 0 }}>
                 {co.desc}
               </p>
               <svg width="11" height="11" viewBox="0 0 12 12" fill="none" style={{ opacity: 0.2, alignSelf: 'flex-end' }}>
@@ -127,11 +127,7 @@ export default function Work() {
         </div>
 
         {/* Stats row - directly under cards, no divider */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(3, 1fr)',
-          gap: 'clamp(1rem,3vw,2.5rem)',
-        }}>
+        <div className="stats-grid" style={{ display: 'grid', gap: 'clamp(1rem,3vw,2.5rem)' }}>
           {STATS.map((s) => (
             <div key={s.n} style={{ borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: 'clamp(1rem,2vh,1.5rem)' }}>
               <div style={{
@@ -182,7 +178,7 @@ export default function Work() {
               }}
             >
               {s.icon(11)}
-              {s.label.toLowerCase()}
+              {s.label}
             </div>
           ))}
         </div>
