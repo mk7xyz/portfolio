@@ -17,7 +17,7 @@ const VENTURES = [
   { name: 'Frags',                         desc: 'AI-powered gaming highlight clips',    tag: 'Inactive', url: null               },
   { name: 'SPRK',                          desc: 'AI edtech and learning software.',      tag: 'Active',   url: 'https://sprk.co'  },
   { name: 'Dart',                          desc: 'AI automation and consulting agency.',  tag: 'Active',   url: 'https://dart.ceo' },
-  { name: 'Aster',                         desc: "Women's health & wellness platform",   tag: 'Active',   url: 'https://aster.fit'},
+  { name: 'Aster',                         desc: "AI women's health and wellness app.",    tag: 'Active',   url: 'https://aster.fit'},
 ];
 
 const TAG_COLOR: Record<string, string> = {
