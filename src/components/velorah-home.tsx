@@ -62,32 +62,28 @@ export default function VelorahHome() {
     return () => v.removeEventListener('loadedmetadata', set);
   }, []);
 
-  // Cal.com — lazy-init on first hover/focus so the popup is ready by click
+  // Cal.com — floating "book a call" button (dark popup). The inline
+  // book-a-call buttons share the "meet" namespace, so they open it too.
   useEffect(() => {
-    let ready = false;
-    const initCal = () => {
-      if (ready) return;
-      ready = true;
-      /* eslint-disable */
-      (function (C: any, A: string, L: string) { let p = function (a: any, ar: any) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement('script')).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === 'string') { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ['initNamespace', namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, 'https://app.cal.com/embed/embed.js', 'init');
-      const Cal = (window as any).Cal;
-      Cal('init', 'meet', { origin: 'https://app.cal.com' });
-      Cal.config = Cal.config || {};
-      Cal.config.forwardQueryParams = true;
-      Cal.ns.meet('ui', { hideEventTypeDetails: false, layout: 'month_view', theme: 'dark' });
-      /* eslint-enable */
-    };
-    const btns = Array.from(document.querySelectorAll('.velorah [data-cal-link]'));
-    btns.forEach((b) => {
-      b.addEventListener('pointerenter', initCal);
-      b.addEventListener('focus', initCal);
-      b.addEventListener('pointerdown', initCal);
+    if ((window as any).__calMeetInit) return;
+    (window as any).__calMeetInit = true;
+    /* eslint-disable */
+    (function (C: any, A: string, L: string) { let p = function (a: any, ar: any) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement('script')).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === 'string') { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ['initNamespace', namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, 'https://app.cal.com/embed/embed.js', 'init');
+    const Cal = (window as any).Cal;
+    Cal('init', 'meet', { origin: 'https://app.cal.com' });
+    Cal.config = Cal.config || {};
+    Cal.config.forwardQueryParams = true;
+    Cal.ns.meet('floatingButton', {
+      calLink: 'mk7ft/meet',
+      config: { layout: 'month_view', useSlotsViewOnSmallScreen: 'true', theme: 'dark' },
+      buttonText: 'book a call',
+      buttonColor: '#ffffff',
+      buttonTextColor: '#0a1118',
+      hideButtonIcon: false,
+      buttonPosition: 'bottom-right',
     });
-    return () => btns.forEach((b) => {
-      b.removeEventListener('pointerenter', initCal);
-      b.removeEventListener('focus', initCal);
-      b.removeEventListener('pointerdown', initCal);
-    });
+    Cal.ns.meet('ui', { hideEventTypeDetails: false, layout: 'month_view', theme: 'dark' });
+    /* eslint-enable */
   }, []);
 
   return (
@@ -110,7 +106,7 @@ export default function VelorahHome() {
           <a className="logo" href="https://mk7ft.com">MK<sub>7</sub></a>
           <div className="nav-r">
             <a href="https://linkedin.com/in/mk7ft" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <button className="pill glass" {...CAL_ATTRS}>book a call ↗</button>
+            <a href={RESUME} target="_blank" rel="noopener noreferrer">résumé</a>
           </div>
         </nav>
 
@@ -191,7 +187,6 @@ export default function VelorahHome() {
           <div className="meta">
             <span className="lc">tampa, fl</span>
             <span className="lc">© 2026 muhammad kamil</span>
-            <span className="lc">mk7ft.com</span>
           </div>
         </footer>
       </div>
