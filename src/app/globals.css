@@ -261,6 +261,7 @@ nextjs-portal { display: none !important; }
 .velorah .seen a:hover{color:var(--fg)}
 .velorah .meta{display:flex;gap:1.4rem}
 .velorah .meta span{font-size:0.66rem;letter-spacing:0.08em;color:var(--faint)}
+.velorah .pin{width:.64rem;height:.64rem;margin-right:.32rem;vertical-align:-1.5px;display:inline-block}
 .velorah .meta a{font-size:0.66rem;letter-spacing:0.08em;color:var(--soft);text-decoration:none;transition:color .15s ease}
 .velorah .meta a:hover{color:var(--fg)}
 
