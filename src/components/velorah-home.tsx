@@ -71,7 +71,7 @@ export default function VelorahHome() {
 
       <div className="shell">
         <nav className="r1">
-          <a className="logo" href="https://mk7ft.com">MK<sub>7</sub></a>
+          <a className="logo" href="https://mk7ft.com" aria-label="MK7 — home"><img src="/mk-logo.png" alt="MK7" /></a>
           <div className="nav-r">
             <a href="https://linkedin.com/in/mk7ft" target="_blank" rel="noopener noreferrer">LinkedIn<span className="li-note">(11k+ followers)</span></a>
           </div>

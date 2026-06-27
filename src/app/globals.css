@@ -204,8 +204,8 @@ nextjs-portal { display: none !important; }
 .velorah .shell>:first-child,.velorah .shell>:last-child{flex-shrink:0}
 
 .velorah nav{display:flex;align-items:center;justify-content:space-between;gap:1rem}
-.velorah .logo{font-family:var(--font-instrument);font-style:italic;font-size:1.4rem;color:var(--fg);text-decoration:none}
-.velorah .logo sub{font-size:0.55em;font-style:normal}
+.velorah .logo{display:inline-flex;align-items:center;text-decoration:none}
+.velorah .logo img{height:1.7rem;width:auto;display:block}
 .velorah .nav-r{display:flex;align-items:center;gap:clamp(1rem,1.8vw,1.6rem)}
 .velorah .nav-r a{font-size:0.8rem;color:var(--soft);text-decoration:none;transition:color .15s}
 .velorah .nav-r a:hover{color:var(--fg)}
