@@ -212,7 +212,7 @@ nextjs-portal { display: none !important; }
 .velorah .li-note{margin-left:.45rem;font-size:0.6rem;letter-spacing:0.06em;color:var(--faint);vertical-align:.05em}
 .velorah .pill{display:inline-flex;align-items:center;gap:.4rem;border-radius:999px;padding:.55rem 1.2rem;font-size:0.74rem;color:var(--fg);cursor:pointer;border:none}
 
-.velorah main{flex:1;min-height:0;display:grid;grid-template-columns:1.05fr 2.4fr;gap:clamp(1.6rem,3.6vw,3.8rem)}
+.velorah main{flex:1;min-height:0;display:grid;grid-template-columns:1.05fr 2.4fr;gap:clamp(1.6rem,3.6vw,3.8rem);align-content:center}
 
 .velorah .identity{display:flex;flex-direction:column;justify-content:flex-start;gap:clamp(1.4rem,4vh,2.6rem);min-width:0;
   border-right:1px solid var(--line);padding-right:clamp(1rem,2vw,2rem)}
