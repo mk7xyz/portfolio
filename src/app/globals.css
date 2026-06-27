@@ -212,9 +212,9 @@ nextjs-portal { display: none !important; }
 .velorah .li-note{margin-left:.45rem;font-size:0.6rem;letter-spacing:0.06em;color:var(--faint);vertical-align:.05em}
 .velorah .pill{display:inline-flex;align-items:center;gap:.4rem;border-radius:999px;padding:.55rem 1.2rem;font-size:0.74rem;color:var(--fg);cursor:pointer;border:none}
 
-.velorah main{flex:1;min-height:0;display:grid;grid-template-columns:1.05fr 2.4fr;gap:clamp(1rem,2.6vw,2.6rem)}
+.velorah main{flex:1;min-height:0;display:grid;grid-template-columns:1.05fr 2.4fr;gap:clamp(1.6rem,3.6vw,3.8rem)}
 
-.velorah .identity{display:flex;flex-direction:column;justify-content:center;gap:clamp(1rem,2.6vh,1.7rem);min-width:0;
+.velorah .identity{display:flex;flex-direction:column;justify-content:center;gap:clamp(1.4rem,4vh,2.6rem);min-width:0;
   border-right:1px solid var(--line);padding-right:clamp(1rem,2vw,2rem)}
 .velorah .eyebrow{font-size:0.78rem;color:var(--vmuted)}
 .velorah .eyebrow b{color:var(--fg);font-weight:400}
@@ -222,7 +222,7 @@ nextjs-portal { display: none !important; }
   font-size:clamp(2.8rem,5vw,5.2rem);text-shadow:0 3px 30px rgba(0,0,0,0.45)}
 .velorah h1 em{font-style:italic}
 .velorah .tagline{margin-top:.7rem;font-size:clamp(.85rem,1vw,1rem);color:var(--soft);letter-spacing:.01em}
-.velorah .bio{margin-top:0;display:flex;flex-direction:column;gap:.5rem;color:var(--soft);font-size:clamp(.8rem,.95vw,.95rem);line-height:1.45;max-width:42ch}
+.velorah .bio{margin-top:0;display:flex;flex-direction:column;gap:.65rem;color:var(--soft);font-size:clamp(.8rem,.95vw,.95rem);line-height:1.6;max-width:42ch}
 .velorah .bio p{margin:0}
 .velorah .chat{font-family:var(--font-instrument);font-size:clamp(1.4rem,1.9vw,1.8rem);line-height:1.15;margin-bottom:1rem;color:var(--fg)}
 .velorah .chat em{font-style:italic;color:var(--vmuted)}
@@ -233,10 +233,10 @@ nextjs-portal { display: none !important; }
   backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
 .velorah .btn-ghost:hover{border-color:rgba(255,255,255,0.5);background:rgba(255,255,255,0.12)}
 
-.velorah .right{display:flex;flex-direction:column;justify-content:center;gap:clamp(1.6rem,4vh,2.8rem);min-height:0;min-width:0}
+.velorah .right{display:flex;flex-direction:column;justify-content:center;gap:clamp(2rem,5.5vh,3.8rem);min-height:0;min-width:0}
 .velorah .stat{min-width:0}
-.velorah .statstack{display:flex;flex-direction:column;gap:clamp(1rem,2.4vh,1.6rem)}
-.velorah .label{font-size:0.66rem;letter-spacing:0.26em;text-transform:uppercase;color:var(--faint);margin-bottom:.85rem}
+.velorah .statstack{display:flex;flex-direction:column;gap:clamp(1.5rem,3.6vh,2.4rem)}
+.velorah .label{font-size:0.66rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--faint);margin-bottom:1.15rem}
 
 .velorah .work-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(.6rem,1vw,.9rem)}
 .velorah .wcard{display:flex;flex-direction:column;gap:.45rem;border:1px solid rgba(255,255,255,0.13);background:rgba(8,18,15,0.36);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-radius:12px;padding:clamp(.85rem,1.1vw,1.15rem);min-height:0;min-width:0;text-decoration:none;transition:transform .14s ease,background .14s ease,border-color .14s ease,box-shadow .14s ease}
